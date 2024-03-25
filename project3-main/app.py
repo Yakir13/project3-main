@@ -10,5 +10,12 @@ def addition():
     return jsonify({"result": result})
 
 
+@app.route("/subtraction", methods=["POST"])
+def subtraction():
+    data = request.get_json()
+    result = data["num1"] - data["num2"]
+    return jsonify({"result": result})
+
+
 if __name__ == "__main__":
     app.run(debug=True)
