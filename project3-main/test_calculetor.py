@@ -18,3 +18,11 @@ def test_subtraction():
     response = requests.post(f"{API_URL}/subtraction", json=test_data)
     assert response.status_code == 200
     assert response.json()["result"] == expected_result
+
+
+def test_multiplication():
+    test_data = {"num1": 1, "num2": 2}
+    expected_result = test_data["num1"] * test_data["num2"]
+    response = requests.post(f"{API_URL}/multiplication", json=test_data)
+    assert response.status_code == 200
+    assert response.json()["result"] == expected_result
