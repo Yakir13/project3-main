@@ -26,3 +26,11 @@ def test_multiplication():
     response = requests.post(f"{API_URL}/multiplication", json=test_data)
     assert response.status_code == 200
     assert response.json()["result"] == expected_result
+
+
+def test_division():
+    test_data = {"num1": 1, "num2": 2}
+    expected_result = test_data["num1"] / test_data["num2"]
+    response = requests.post(f"{API_URL}/division", json=test_data)
+    assert response.status_code == 200
+    assert response.json()["result"] == expected_result
